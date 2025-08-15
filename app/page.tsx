@@ -226,77 +226,38 @@ export default function Portfolio() {
   const experiences = [
     {
       id: 1,
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      type: "Full-time",
+      title: "Junior Full Stack Developer",
+      company: "Selftaught",
+      location: "Johannesburg, South Africa",
+      period: "2024 - Present",
+      type: "Full-time, Remote",
       description:
-        "Leading development of enterprise-scale applications using Next.js, TypeScript, and cloud technologies. Architected microservices handling 1M+ daily users.",
+        "Learning development of enterprise-scale applications using Next.js, TypeScript, and cloud technologies. Architected microservices handling 1M+ daily users.",
       achievements: [
         "Reduced application load time by 60% through optimization",
         "Led team of 5 developers on critical product launches",
         "Implemented CI/CD pipelines reducing deployment time by 80%",
         "Mentored junior developers and conducted code reviews",
       ],
-      technologies: ["Next.js", "TypeScript", "AWS", "PostgreSQL", "Docker"],
+      technologies: ["Next.js", "TypeScript", "Clerk", "PostgreSQL", "Neon", "API Routes"],
       icon: Building,
       color: "from-blue-500 to-cyan-500",
     },
     {
       id: 2,
-      title: "Full Stack Developer",
-      company: "StartupXYZ",
-      location: "Remote",
-      period: "2021 - 2022",
-      type: "Full-time",
+      title: "3D Artist and web design (Figma)",
+      company: "Self-employed",
+      location: "Johannesburg, South Africa",
+      period: "2023 - Present",
+      type: "Full-time, Remote",
       description:
-        "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.",
+        "Started my learning journey creating models and learning modern production practices. Gained experience in both Motion Graphics and 3D Animation.",
       achievements: [
-        "Built 15+ responsive web applications from scratch",
-        "Integrated third-party APIs and payment systems",
-        "Improved code quality through testing and documentation",
-        "Collaborated with cross-functional teams on product strategy",
+        "Completed 10+ 3D models and animations",
+        "Learned modern rendering and animation frameworks and tools",
+        "Participated content creation",
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Vercel"],
-      icon: TrendingUp,
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      id: 3,
-      title: "Frontend Developer",
-      company: "Digital Agency Pro",
-      location: "New York, NY",
-      period: "2020 - 2021",
-      type: "Full-time",
-      description:
-        "Specialized in creating engaging user experiences and interactive web applications. Worked closely with designers to bring creative visions to life.",
-      achievements: [
-        "Developed interactive animations and micro-interactions",
-        "Optimized websites for performance and accessibility",
-        "Created reusable component libraries",
-        "Maintained 98% client satisfaction rate",
-      ],
-      technologies: ["React", "GSAP", "Sass", "Webpack", "Figma"],
-      icon: Palette,
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      id: 4,
-      title: "Junior Web Developer",
-      company: "WebDev Studio",
-      location: "Austin, TX",
-      period: "2019 - 2020",
-      type: "Full-time",
-      description:
-        "Started my professional journey building websites and learning modern development practices. Gained experience in both frontend and backend technologies.",
-      achievements: [
-        "Completed 25+ client websites and web applications",
-        "Learned modern JavaScript frameworks and tools",
-        "Participated in agile development processes",
-        "Contributed to open-source projects",
-      ],
-      technologies: ["JavaScript", "PHP", "MySQL", "WordPress", "Bootstrap"],
+      technologies: ["Blender", "Cycles", "Photoshop", "Figma", "Three.js"],
       icon: Code2,
       color: "from-orange-500 to-red-500",
     },
@@ -304,33 +265,25 @@ export default function Portfolio() {
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
-      period: "2015 - 2019",
+      degree: "Selftaught",
+      school: "FreeCodeCamp.org",
+      period: "2024 - Present",
       description: "Focused on software engineering, algorithms, and web development",
-      achievements: ["Magna Cum Laude", "Dean's List 6 semesters", "CS Club President"],
+      achievements: ["Next.js ", "React", "TypeScript",],
     },
     {
       degree: "Full Stack Web Development Bootcamp",
       school: "CodeAcademy Pro",
-      period: "2019",
+      period: "2024 - Present",
       description: "Intensive program covering modern web development technologies",
-      achievements: ["Top 5% of cohort", "Capstone project winner", "Peer mentor"],
+      achievements: ["Hackathon participant",],
     },
   ]
 
   const designProjects = [
+
     {
       id: 1,
-      title: "Architectural Visualization",
-      description: "Photorealistic 3D renders of modern architectural designs using advanced lighting and materials.",
-      image: "/3d-architecture-render.png",
-      category: "Architecture",
-      tools: ["Blender", "Cycles", "Photoshop"],
-      year: "2024",
-    },
-    {
-      id: 2,
       title: "Product Design Showcase",
       description: "Interactive 3D product presentations with real-time material customization and lighting.",
       image: "/3d-product-showcase.png",
@@ -339,7 +292,7 @@ export default function Portfolio() {
       year: "2023",
     },
     {
-      id: 3,
+      id: 2,
       title: "Abstract Art Installation",
       description: "Generative 3D art pieces exploring geometric forms and dynamic lighting effects.",
       image: "/3d-abstract-art.png",
@@ -348,7 +301,7 @@ export default function Portfolio() {
       year: "2023",
     },
     {
-      id: 4,
+      id: 3,
       title: "Character Design & Animation",
       description: "Stylized character models with rigging and animation for interactive web experiences.",
       image: "/3d-character-design.png",
@@ -365,7 +318,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Portfolio
+               My Portfolio
             </div>
 
             {/* Desktop Navigation */}
@@ -508,21 +461,27 @@ export default function Portfolio() {
               >
                 View My Work
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
+              <a 
+                href="/assets/Zwivhuya CV.pdf" 
+                download="Zwivhuya_Mbulaheni_Resume.pdf"
+                className="inline-block"
               >
-                Download Resume
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
+                >
+                  Download Resume
+                </Button>
+              </a>
             </div>
 
             {/* Social links */}
             <div className="flex justify-center gap-6 mb-12">
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#contact", label: "Email" },
+                { icon: Github, href: "https://github.com/ZwivhuyaDeveloper/", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/zwivhuya-mbulaheni-792baa305", label: "LinkedIn" },
+                { icon: Mail, href: "https://mbulahenizwivhuya02@gmail.com", label: "Email" },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -577,8 +536,9 @@ export default function Portfolio() {
               <div className="space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-semibold text-white">Full-Stack Developer & 3D Artist</h3>
+                  <h4  className="text-xl font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">Zwivhuya Mbulaheni</h4>
                   <p className="text-gray-300 leading-relaxed">
-                    I'm a passionate full-stack developer with over 5 years of experience crafting digital experiences
+                    I'm a passionate full-stack developer with over 2 years of experience crafting digital experiences
                     that blend cutting-edge technology with creative design. My journey spans from building scalable web
                     applications to creating immersive 3D visualizations.
                   </p>
@@ -629,12 +589,19 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex gap-4 pt-6">
-                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                    Download Resume
-                  </button>
-                  <button className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-gray-500 hover:text-white transition-all duration-300">
+                  <a 
+                href="/assets/Zwivhuya CV.pdf" 
+                download="Zwivhuya_Mbulaheni_Resume.pdf"
+                className="inline-block"
+                  >
+                    <Button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                      Download Resume
+                    </Button>
+                  </a>
+
+                  <Button className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-gray-500 hover:text-white transition-all duration-300">
                     View Projects
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -1053,10 +1020,10 @@ export default function Portfolio() {
           {/* Stats Section */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: "Years Experience", value: "5+", icon: Calendar },
-              { label: "Projects Completed", value: "50+", icon: Code2 },
-              { label: "Happy Clients", value: "30+", icon: Users },
-              { label: "Technologies Mastered", value: "20+", icon: Zap },
+              { label: "Years Experience", value: "2+", icon: Calendar },
+              { label: "Projects Completed", value: "3+", icon: Code2 },
+              { label: "Projects deployed", value: "3+", icon: Users },
+              { label: "Technologies Mastered", value: "7+", icon: Zap },
             ].map((stat, index) => (
               <div
                 key={stat.label}
@@ -1250,13 +1217,15 @@ export default function Portfolio() {
 
           {/* Call to Action */}
           <div className="text-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-pink-500/25"
-            >
-              <Cube className="w-5 h-5 mr-2" />
-              Explore More 3D Work
-            </Button>
+            <a href="https://www.youtube.com/@CyclespaceStudio" >
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-pink-500/25"
+              >
+                <Cube className="w-5 h-5 mr-2" />
+                Explore More 3D Work
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -1290,7 +1259,7 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white">Email</h4>
-                      <p className="text-gray-400">hello@yourname.dev</p>
+                      <p className="text-gray-400">mbulahenizwivhuya02@gmail.com</p>
                     </div>
                   </div>
 
@@ -1300,7 +1269,7 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white">Phone</h4>
-                      <p className="text-gray-400">+1 (555) 123-4567</p>
+                      <p className="text-gray-400">+27 79 360 4713</p>
                     </div>
                   </div>
 
@@ -1321,9 +1290,9 @@ export default function Portfolio() {
                 <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, href: "#", label: "GitHub", color: "hover:text-gray-300" },
-                    { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-400" },
-                    { icon: Mail, href: "mailto:hello@yourname.dev", label: "Email", color: "hover:text-green-400" },
+                    { icon: Github, href: "https://github.com/ZwivhuyaDeveloper/", label: "GitHub", color: "hover:text-gray-300" },
+                    { icon: Linkedin, href: "https://linkedin.com/in/zwivhuya-mbulaheni-792baa305", label: "LinkedIn", color: "hover:text-blue-400" },
+                    { icon: Mail, href: "https://mbulahenizwivhuya02@gmail.com", label: "Email", color: "hover:text-green-400" },
                   ].map((social) => (
                     <a
                       key={social.label}
@@ -1436,9 +1405,9 @@ export default function Portfolio() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                Portfolio
+                My Portfolio
               </div>
-              <p className="text-gray-400 text-sm">© 2024 Your Name. All rights reserved.</p>
+              <p className="text-gray-400 text-sm">© 2024 Zwivhuya Mbulaheni. All rights reserved.</p>
             </div>
 
             <div className="flex items-center gap-6">
@@ -1455,9 +1424,9 @@ export default function Portfolio() {
 
             <div className="flex gap-4">
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#contact", label: "Email" },
+                { icon: Github, href: "https://github.com/ZwivhuyaDeveloper/", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/zwivhuya-mbulaheni-792baa305", label: "LinkedIn" },
+                { icon: Mail, href: "https://mbulahenizwivhuya02@gmail.com", label: "Email" },
               ].map((social) => (
                 <a
                   key={social.label}
