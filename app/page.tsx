@@ -127,19 +127,19 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Crypto currency token swap app",
       description:
-        "Full-stack e-commerce solution with advanced features including real-time inventory, payment processing, and admin dashboard.",
+        "Full-stack crypto currency token swap app with advanced features including web landing page, real-time data, authentication, news site, and custom token database.",
       image: "/placeholder-0lf4q.png",
       category: "Full Stack",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-      features: ["Real-time inventory", "Payment processing", "Admin dashboard", "Order tracking"],
+      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Clerk", "Neon", "API Routes", "sanity CMS", "Coingecko API"],
+      features: ["Real-time data", "Payment processing", "Admin dashboard", "Coingecko API"],
       github: "#",
       demo: "#",
       status: "Featured",
     },
     {
-      id: 2,
+      id: 3,
       title: "3D Portfolio Showcase",
       description:
         "Interactive 3D portfolio website featuring immersive experiences and smooth animations built with Three.js and React Three Fiber.",
@@ -152,56 +152,17 @@ export default function Portfolio() {
       status: "Featured",
     },
     {
-      id: 3,
-      title: "SaaS Analytics Dashboard",
+      id: 2,
+      title: "Full Stack News website",
       description:
-        "Comprehensive analytics platform with real-time data visualization, user management, and subscription handling.",
+        "Full Stack News website with real-time articles, user management, and authentication handling.",
       image: "/dark-analytics-dashboard.png",
       category: "Full Stack",
       technologies: ["Next.js", "TypeScript", "Clerk", "Neon", "Chart.js"],
-      features: ["Real-time analytics", "User authentication", "Subscription management", "Data visualization"],
+      features: ["Real-time articles", "User authentication", "categorization", "search functionality", "pagination"],
       github: "#",
       demo: "#",
       status: "New",
-    },
-    {
-      id: 4,
-      title: "Content Management System",
-      description:
-        "Headless CMS built with Sanity, featuring rich content editing, media management, and API-first architecture.",
-      image: "/cms-interface-dark.png",
-      category: "Backend",
-      technologies: ["Sanity CMS", "Next.js", "TypeScript", "Vercel", "GraphQL"],
-      features: ["Rich content editing", "Media management", "API-first design", "Multi-language support"],
-      github: "#",
-      demo: "#",
-      status: "Completed",
-    },
-    {
-      id: 5,
-      title: "AI-Powered Chat Application",
-      description:
-        "Real-time chat application with AI integration, featuring smart responses, file sharing, and group conversations.",
-      image: "/placeholder-d9h7o.png",
-      category: "Full Stack",
-      technologies: ["Next.js", "Socket.io", "OpenAI", "Prisma", "Redis"],
-      features: ["AI integration", "Real-time messaging", "File sharing", "Group chats"],
-      github: "#",
-      demo: "#",
-      status: "In Progress",
-    },
-    {
-      id: 6,
-      title: "3D Product Configurator",
-      description:
-        "Interactive 3D product customization tool allowing users to modify materials, colors, and components in real-time.",
-      image: "/3d-product-configurator.png",
-      category: "3D Design",
-      technologies: ["Three.js", "React", "WebGL", "Blender", "GSAP"],
-      features: ["Real-time customization", "Material editor", "Export functionality", "Mobile responsive"],
-      github: "#",
-      demo: "#",
-      status: "Completed",
     },
   ]
 
