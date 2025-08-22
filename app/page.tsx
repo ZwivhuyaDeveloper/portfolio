@@ -773,6 +773,7 @@ export default function Portfolio() {
                     <Button
                       size="sm"
                       className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      onClick={() => window.open('https://balanced-deadly-kitten.ngrok-free.app/', '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
@@ -781,6 +782,7 @@ export default function Portfolio() {
                       size="sm"
                       variant="outline"
                       className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent"
+                      onClick={() => window.open('https://github.com/ZwivhuyaDeveloper/cs-exchange-v2.2.git', '_blank')}
                     >
                       <Github className="w-4 h-4" />
                     </Button>
