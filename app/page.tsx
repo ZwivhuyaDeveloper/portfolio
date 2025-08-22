@@ -127,46 +127,33 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: "Crypto currency token swap app",
+      title: "Cyclespace Exchange",
       description:
         "Full-stack crypto currency token swap app with advanced features including web landing page, real-time data, authentication, news site, and custom token database.",
-      image: "/placeholder-0lf4q.png",
+      image: "/DASHBOARD.png",
       category: "Full Stack",
       technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Clerk", "Neon", "API Routes", "sanity CMS", "Coingecko API"],
       features: ["Real-time data", "Payment processing", "Admin dashboard", "Coingecko API"],
-      github: "#",
-      demo: "#",
-      status: "Featured",
-    },
-    {
-      id: 3,
-      title: "3D Portfolio Showcase",
-      description:
-        "Interactive 3D portfolio website featuring immersive experiences and smooth animations built with Three.js and React Three Fiber.",
-      image: "/3d-portfolio-floating.png",
-      category: "3D Design",
-      technologies: ["React", "Three.js", "React Three Fiber", "GSAP", "Blender"],
-      features: ["Interactive 3D models", "Smooth animations", "Responsive design", "WebGL optimization"],
-      github: "#",
-      demo: "#",
+      demo: "https://balanced-deadly-kitten.ngrok-free.app/Dashboard",
+      github: "https://github.com/ZwivhuyaDeveloper/cs-exchange-v2.2.git",
       status: "Featured",
     },
     {
       id: 2,
-      title: "Full Stack News website",
+      title: "Cyclespace Exchange Website",
       description:
-        "Full Stack News website with real-time articles, user management, and authentication handling.",
-      image: "/dark-analytics-dashboard.png",
+        "A web landing page for the Cyclespace Exchange app.",
+      image: "/WEBSITE.png",
       category: "Full Stack",
-      technologies: ["Next.js", "TypeScript", "Clerk", "Neon", "Chart.js"],
-      features: ["Real-time articles", "User authentication", "categorization", "search functionality", "pagination"],
-      github: "#",
-      demo: "#",
-      status: "New",
+      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Clerk", "Neon", "API Routes", "sanity CMS", "Coingecko API"],
+      features: ["Real-time data", "Payment processing", "Admin dashboard", "Coingecko API"],
+      github: "https://github.com/ZwivhuyaDeveloper/cs-exchange-v2.2.git",
+      demo: "https://balanced-deadly-kitten.ngrok-free.app/",
+      status: "Featured",
     },
   ]
 
-  const categories = ["All", "Full Stack", "3D Design", "Backend"]
+  const categories = ["All", "Full Stack App", "Website"]
 
   const filteredProjects =
     selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
@@ -423,7 +410,7 @@ export default function Portfolio() {
                 View My Work
               </Button>
               <a 
-                href="/assets/Zwivhuya CV.pdf" 
+                href="/assets/ZWIVHUYA2.pdf" 
                 download="Zwivhuya_Mbulaheni_Resume.pdf"
                 className="inline-block"
               >
@@ -551,7 +538,7 @@ export default function Portfolio() {
 
                 <div className="flex gap-4 pt-6">
                   <a 
-                href="/assets/Zwivhuya CV.pdf" 
+                href="/assets/ZWIVHUYA2.pdf" 
                 download="Zwivhuya_Mbulaheni_Resume.pdf"
                 className="inline-block"
                   >
@@ -702,7 +689,7 @@ export default function Portfolio() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {filteredProjects.map((project, index) => (
               <Card
                 key={project.id}
@@ -983,7 +970,7 @@ export default function Portfolio() {
             {[
               { label: "Years Experience", value: "2+", icon: Calendar },
               { label: "Projects Completed", value: "3+", icon: Code2 },
-              { label: "Projects deployed", value: "3+", icon: Users },
+              { label: "Projects in Development", value: "3+", icon: Users },
               { label: "Technologies Mastered", value: "7+", icon: Zap },
             ].map((stat, index) => (
               <div
@@ -1026,88 +1013,6 @@ export default function Portfolio() {
             >
               <Scene3DComponent />
             </Suspense>
-          </div>
-
-          {/* Design Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {designProjects.map((project, index) => (
-              <Card
-                key={project.id}
-                className="bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300 hover:scale-[1.02] group overflow-hidden"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg?height=300&width=500&query=3d design render"}
-                    alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-gradient-to-r from-pink-500 to-purple-500 text-white border-0">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="outline" className="border-gray-400 text-gray-300 bg-gray-900/80 backdrop-blur-sm">
-                      {project.year}
-                    </Badge>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button
-                      size="sm"
-                      className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white"
-                    >
-                      <Play className="w-4 h-4 mr-2" />
-                      View in 3D
-                    </Button>
-                  </div>
-                </div>
-
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-pink-400 transition-colors mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4 text-sm leading-relaxed">{project.description}</p>
-
-                  {/* Tools Used */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-                      <Cube className="w-4 h-4 text-pink-400" />
-                      Tools & Software
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tools.map((tool) => (
-                        <Badge
-                          key={tool}
-                          variant="secondary"
-                          className="bg-gray-800/50 text-gray-300 text-xs border-gray-700"
-                        >
-                          {tool}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <Button
-                      size="sm"
-                      className="flex-1 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white"
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      View Project
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent"
-                    >
-                      <Download className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
 
           {/* Skills & Tools Section */}
