@@ -21,7 +21,7 @@ export function HeroTypography() {
       </defs>
       <text
         x="30"
-        y="478"
+        y="465"
         textLength="1615"
         lengthAdjust="spacingAndGlyphs"
         fontWeight="900"

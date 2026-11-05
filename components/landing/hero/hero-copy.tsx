@@ -3,7 +3,7 @@ import { site } from "@/data/site";
 
 export function HeroCopy() {
   return (
-    <div className="absolute left-[3.4%] top-[38.8%] z-[60] w-[56%] max-[900px]:bottom-[12%] max-[900px]:left-[6%] max-[900px]:right-[6%] max-[900px]:top-auto max-[900px]:w-auto">
+    <div className="absolute left-[3.4%] top-[36%] z-[60] w-[56%] max-[900px]:bottom-[12%] max-[900px]:left-[6%] max-[900px]:right-[6%] max-[900px]:top-auto max-[900px]:w-auto">
       {/* tag */}
       <div className="font-display text-[clamp(0.9rem,1.28cqw,999px)] font-medium uppercase leading-[1.25] tracking-[0.14em] text-foreground/80 after:mt-[2.3cqw] after:block after:h-px after:w-[6.9cqw] after:bg-foreground/70 after:content-[''] max-[900px]:text-[0.8rem] max-[900px]:after:mt-[3vw]">
         {site.taglineLines.map((line, i) => (
@@ -15,17 +15,17 @@ export function HeroCopy() {
       </div>
 
       {/* headline */}
-      <h1 className="m-0 mt-[2.4cqw] font-display text-[clamp(3.6rem,6.55cqw,999px)] font-extrabold italic uppercase leading-[0.8] tracking-[0.005em] max-[900px]:mt-[4vw] max-[900px]:text-[clamp(3.4rem,16vw,5.6rem)]">
-        <span className="block w-fit origin-left scale-x-[1.24] bg-linear-to-b from-white to-[#9d9d99] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-[1.12]">
+      <h1 className="m-0 mt-[2.4cqw] max-w-full font-display text-[clamp(3.6rem,6.55cqw,999px)] font-extrabold italic uppercase leading-[0.8] tracking-[0.005em] max-[900px]:mt-[4vw] max-[900px]:text-[clamp(2.5rem,14vw,4.5rem)]">
+        <span className="block w-fit max-w-full origin-left scale-x-[1.24] bg-linear-to-b from-white to-[#9d9d99] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-100">
           {site.heroHeading[0]}
         </span>
-        <span className="block w-fit origin-left scale-x-[1.24] bg-linear-to-b from-[#f3ff7c] via-accent to-[#9ad800] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-[1.12]">
+        <span className="block w-fit max-w-full origin-left scale-x-[1.24] bg-linear-to-b from-[#f3ff7c] via-accent to-[#9ad800] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-100">
           {site.heroHeading[1]}
         </span>
       </h1>
 
       {/* paragraph */}
-      <p className="my-[1.5cqw] mb-[2.2cqw] max-w-[31cqw] font-body text-[clamp(0.95rem,1.2cqw,999px)] leading-[1.35] text-foreground max-[900px]:my-[3vw] max-[900px]:max-w-xs max-[900px]:text-[0.85rem] max-[900px]:[text-shadow:0_0_14px_#000]">
+      <p className="my-[1.5cqw] mb-[1.8cqw] max-w-[31cqw] font-body text-[clamp(0.95rem,1.2cqw,999px)] leading-[1.35] text-foreground max-[900px]:my-[3vw] max-[900px]:max-w-xs max-[900px]:text-[0.85rem] max-[900px]:[text-shadow:0_0_14px_#000]">
         {site.heroCopy}
       </p>
 

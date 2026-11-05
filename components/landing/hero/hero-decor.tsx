@@ -12,8 +12,7 @@ export function HeroDecor() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-50">
       <i className="absolute bg-foreground/20" style={{ left: 0, right: 0, top: "10.1%", height: 1 }} />
-      <i className="absolute bg-foreground/20" style={{ left: "79%", right: 0, top: "7.4%", height: 1 }} />
-      <i className="absolute bg-foreground/20" style={{ left: 0, width: "26%", bottom: "8%", height: 1 }} />
+
       <i
         className="absolute bg-foreground/20"
         style={{ left: "65%", top: 0, width: 1, height: "10%", transform: "rotate(20deg)", transformOrigin: "top" }}

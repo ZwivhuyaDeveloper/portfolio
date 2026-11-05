@@ -355,7 +355,6 @@
     line-height: 1;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border-bottom: 1px solid #f2f2f0;
     padding: 0.7cqw 0;
     transition: color 0.25s, border-color 0.25s;
   }
@@ -397,18 +396,18 @@
     left: 3.4%;
     bottom: 3.2%;
     width: 26%;
-    border-top: 1px solid rgba(242, 242, 240, 0.2);
     padding-top: 0.9cqw;
     display: flex;
     gap: 0.9cqw;
     align-items: center;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(0.65rem, 0.82cqw, 999px);
+    font-size: clamp(0.6rem, 0.95cqw, 999px); /* was 0.65rem, 0.82cqw */
     line-height: 1;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(242, 242, 240, 0.78);
+    
   }
   .hero-strip i {
     width: 0.6cqw;
