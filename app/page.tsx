@@ -1,4 +1,10 @@
+import { AboutSection } from "@/components/landing/about-section";
+import { ContactSection } from "@/components/landing/contact-section";
+import { Footer } from "@/components/landing/footer";
 import { Hero } from "@/components/landing/hero/hero";
+import { ProcessSection } from "@/components/landing/process-section";
+import { ProjectShowcase } from "@/components/landing/projects/project-showcase";
+import { SkillsSection } from "@/components/landing/skills-section";
 
 export default function Home() {
   return (
@@ -8,9 +14,13 @@ export default function Home() {
       </a>
       <Hero />
       <main id="main">
-
+        <ProjectShowcase />
+        <AboutSection />
+        <SkillsSection />
+        <ProcessSection />
+        <ContactSection />
       </main>
-      {/* Footer component can be added here if needed */}
+      <Footer />
     </>
   )
 }
