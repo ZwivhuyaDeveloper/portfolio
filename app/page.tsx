@@ -33,22 +33,19 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
-
-      {/* Enhanced Navigation with mobile menu */}
-      <Navigation />
+    <div className="">
 
       {/* Hero Section */}
       <Hero />
 
+      {/* Projects Portfolio Gallery Section */}
+      <Portfolio />
+      
       {/* About Section */}
       <About />
 
       {/* Tech Stack Showcase Section */}
       <Showcase />
-
-      {/* Projects Portfolio Gallery Section */}
-      <Portfolio />
 
       {/* Experience Timeline Section */}
       <Timeline />
