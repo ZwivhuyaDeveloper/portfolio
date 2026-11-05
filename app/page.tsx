@@ -1,76 +1,16 @@
-"use client"
+import { Hero } from "@/components/landing/hero/hero";
 
-import { useState, useEffect } from "react"
-import { ArrowUp } from "lucide-react"
-import Navigation from "@/components/landing/navigation"
-import Hero from '../components/landing/hero';
-import About from "@/components/landing/about"
-import Showcase from "@/components/landing/showcase"
-import Timeline from "@/components/landing/timeline"
-import Showcase3D from "@/components/landing/Showcase3D"
-import Contact from "@/components/landing/contact"
-import Footer from "@/components/landing/footer"
-
-// Dynamically import 3D component to avoid SSR issues
-
-export default function Portfolio() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [showScrollTop, setShowScrollTop] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
+export default function Home() {
   return (
-    <div className="">
-
-      {/* Hero Section */}
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <Hero />
+      <main id="main">
 
-      {/* Projects Portfolio Gallery Section */}
-      <Portfolio />
-      
-      {/* About Section */}
-      <About />
-
-      {/* Tech Stack Showcase Section */}
-      <Showcase />
-
-      {/* Experience Timeline Section */}
-      <Timeline />
-
-      {/* 3D Design Showcase Section */}
-      <Showcase3D />
-
-      {/* Contact Section */}
-      <Contact />
-
-      {/* Footer */}
-      <Footer />
-
-
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:scale-110 z-40"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
-      )}
-
-    </div>
+      </main>
+      {/* Footer component can be added here if needed */}
+    </>
   )
 }
