@@ -23,17 +23,17 @@ export const site = {
     { label: 'X', href: '#' },
   ],
   portraits: {
-    main: '/images/profile/hero-main.webp',
+    main: '/assets/my_portrait.png',
     alt: [
-      '/images/profile/hero-alt-01.webp',
-      '/images/profile/hero-alt-02.webp',
-      '/images/profile/hero-alt-03.webp',
+      '/assets/images/portrait-alt-01.png',
+      '/assets/images/portrait-alt-02.png',
+      '/assets/images/portrait-alt-03.png',
     ],
   },
   about: {
     heading: ['I build', 'digital', 'systems.'],
-    body: '[Short bio. What you build, how you work, and which problems you enjoy solving.]',
-    image: '/images/about/about.webp',
+    body: 'I am a self-taught full-stack developer with a passion for creating high-performance digital experiences, products, and applications. With expertise in Next.js, TypeScript, React, and Tailwind CSS, I specialize in building scalable and efficient web solutions that meet the needs of modern users.',
+    image: '/assets/my_portrait.png',
     alt: '[YOUR NAME]',
   },
   contact: {

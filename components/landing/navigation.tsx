@@ -10,9 +10,9 @@ export function Navigation() {
       <Link
         href="#top"
         aria-label="Home"
-        className="font-display text-[clamp(1.7rem,2.3cqw,999px)] font-extrabold leading-none tracking-[0.01em]"
+        className="font-display text-[clamp(1.7rem,2.3cqw,999px)] italic font-extrabold leading-none tracking-[0.01em]"
       >
-        DEV.
+        ZM.
       </Link>
 
       <ul className="absolute left-1/2 m-0 flex -translate-x-1/2 list-none gap-[3.1cqw] p-0 font-display text-[clamp(0.8rem,0.98cqw,999px)] font-semibold uppercase leading-none tracking-[0.14em] max-[900px]:hidden">

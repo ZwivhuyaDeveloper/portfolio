@@ -1,24 +1,70 @@
+"use client";
+
 import { site } from "@/data/site";
 import { RidgeArt } from "@/components/art/RidgeArt";
 import { Eyebrow } from "../ui/eyebrow";
 import { Button } from "../ui/button2";
+import Image from "next/image";
+import { useState } from "react";
 
 export function ContactSection() {
   const [l1, l2, l3] = site.contact.heading;
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const offsetX = (event.clientX - (rect.left + rect.width / 2)) / rect.width;
+    const offsetY = (event.clientY - (rect.top + rect.height / 2)) / rect.height;
+
+    setParallax({
+      x: offsetX * 18,
+      y: offsetY * 16,
+    });
+  };
 
   return (
     <section
       id="contact"
+      onMouseMove={handlePointerMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setParallax({ x: 0, y: 0 });
+        setIsHovered(false);
+      }}
       className="relative grid min-h-[30rem] grid-cols-[1.2fr_1fr] items-center gap-12 overflow-hidden border-t border-line px-[var(--pad)] py-20 max-[900px]:block"
     >
-      <RidgeArt className="absolute inset-x-0 bottom-0 z-0 h-[45%] w-full" />
+      <Image 
+        src="/assets/range.png"
+        alt="Contact illustration"
+        width={1200}
+        height={300}
+        quality={100}
+        priority
+        className="absolute inset-x-0 bottom-0 z-0 h-[100%] w-full object-cover"
+      />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-4 top-4 z-0 font-display font-black text-[clamp(6rem,19vw,19rem)] uppercase leading-[0.8] text-transparent [-webkit-text-stroke:1px_rgba(242,242,240,0.22)] max-[900px]:bottom-24 max-[900px]:top-auto"
+        style={{
+          transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0) scale(1.02)`,
+          transition: "transform 180ms ease-out",
+          WebkitTextStroke: isHovered ? "3px var(--color-accent)" : "3px rgba(242,242,240,0.22)",
+        }}
+        className="pointer-events-none absolute -right-4 top-4 z-0 font-display font-black text-[clamp(6rem,19vw,19rem)] uppercase leading-[0.8] text-transparent duration-300 max-[900px]:bottom-24 max-[900px]:top-auto"
       >
         Contact
       </div>
+
+      <Image 
+        src="/assets/range-foreground.png"
+        alt="Contact illustration"
+        width={1200}
+        height={300}
+        quality={100}
+        priority
+        className="absolute inset-x-0 bottom-0 z-0 h-[100%] w-full object-cover"
+      />
 
       <div className="relative z-10">
         <Eyebrow>Get in touch</Eyebrow>
