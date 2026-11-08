@@ -14,7 +14,7 @@ export function ProjectShowcase() {
         rule
         action={
           <Link
-            href="#work"
+            href="/projects"
             className="text-[11px] uppercase tracking-[0.16em] text-accent"
           >
             View all →

@@ -50,3 +50,13 @@ export const site = {
 } as const
 
 export type Site = typeof site
+
+export const projects = {
+  description:
+    'I design and build high-performance digital experiences, products and applications.',
+  taglineLines: ['Web developer /', 'Digital creator'],
+  heroHeading: ['Full-stack', 'Developer'],
+  heroCopy:
+    'I design and build high-performance digital experiences, products and applications.',
+  stack: 'Next.js / TypeScript  •  React  •  Tailwind CSS',
+}
