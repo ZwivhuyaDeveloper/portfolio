@@ -43,6 +43,11 @@ export const site = {
     body: 'Have a project in mind, or just want to connect? Reach out.',
     cta: 'Start a project',
   },
+  projectContact: {
+    heading: ['Have a', 'Project', "Let's Talk"],
+    body: 'Have a project in mind, or just want to connect? Reach out.',
+    cta: 'Start a project',
+  },
   nav: [
     { label: 'Work', href: '#work' },
     { label: 'About', href: '#about' },

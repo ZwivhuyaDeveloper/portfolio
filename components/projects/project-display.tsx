@@ -15,9 +15,9 @@ export function ProjectDisplay() {
         action={
           <Link
             href="/projects"
-            className="text-[11px] uppercase tracking-[0.16em] text-accent"
+            className="text-[11px] uppercase tracking-[0.16em] text-accent hover:text-white hover:scale-[110%]"
           >
-            View all →
+            View Recent →
           </Link>
         }
       >

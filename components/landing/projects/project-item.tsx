@@ -38,7 +38,7 @@ export function ProjectItem({
         <Link
           href={project.href}
           className="inline-block border-b border-foreground py-[0.7rem] font-display text-[11px] font-bold 
-          uppercase tracking-[0.16em] transition-colors duration-200 hover:border-accent hover:text-accent"
+          uppercase tracking-[0.16em] transition-colors duration-200 hover:border-accent hover:text-accent hover:scale-[105%]"
         >
           View case study →
         </Link>

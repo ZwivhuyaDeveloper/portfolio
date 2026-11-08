@@ -44,7 +44,7 @@ export default function ProjectCopy() {
       </p>
 
       {/* buttons */}
-      <div className="flex items-center gap-[2cqw] max-[900px]:gap-[5vw] hidden">
+      <div className="flex items-center gap-[2cqw] max-[900px]:gap-[5vw] ">
         <Link
           href="#work"
           className="group inline-flex items-center gap-[0.8cqw] bg-accent px-[1.7cqw] py-[0.80cqw] font-display 

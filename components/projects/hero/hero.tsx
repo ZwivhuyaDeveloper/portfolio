@@ -23,7 +23,7 @@ export default function Hero() {
           className="pointer-events-none absolute inset-0 z-30 
           bg-[radial-gradient(34%_46%_at_0%_100%,rgba(160,230,0,0.6),rgba(70,110,0,0.28)_50%,transparent_78%)]"
         />
-
+        <ProjectImage />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-[45] 
@@ -31,6 +31,7 @@ export default function Hero() {
         />
         <HeroDecor />
         <ProjectCopy />
+        <HeroStats />
         <HeroMetadata />
       </HeroStage>
     </header>
