@@ -18,8 +18,8 @@ export const site = {
   ],
   links: [
     { label: 'Email', href: 'mailto:mbulahenizwivhuya02@gmail.com' },
-    { label: 'LinkedIn', href: '#' },
-    { label: 'GitHub', href: '#' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/zwivhuya-mbulaheni' },
+    { label: 'GitHub', href: 'https://github.com/ZwivhuyaDeveloper' },
     { label: 'X', href: '#' },
   ],
   portraits: {

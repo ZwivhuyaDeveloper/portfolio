@@ -36,7 +36,7 @@ export function ImageSlot({
   return (
     <div
       className={`relative overflow-hidden ${
-        background === 'dark' ? 'bg-[#0b0b0b]' : ''
+        background === 'dark' ? 'bg-accent' : ''
       } ${grain ? 'grain' : ''} ${className}`}
     >
       {status === 'error' ? (
