@@ -1,4 +1,4 @@
-export function HeroTypography() {
+export function HeroTypography({ word, className = ""}: { word: string; className?: string }) {
   return (
     <svg
       aria-hidden="true"
@@ -31,7 +31,7 @@ export function HeroTypography() {
         filter="url(#hero-grunge)"
         style={{ fontFamily: 'var(--font-barlow), "Barlow Condensed", Impact, sans-serif' }}
       >
-        DEVELOPER
+        {word}
       </text>
     </svg>
   );

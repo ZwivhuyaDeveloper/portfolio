@@ -8,6 +8,7 @@ export const site = {
   availability: 'Available for work',
   taglineLines: ['Web developer /', 'Digital creator'],
   heroHeading: ['Full-stack', 'Developer'],
+  projectHeroHeading: ['Projects', 'Portfolio'],
   heroCopy:
     'I design and build high-performance digital experiences, products and applications.',
   stack: 'Next.js / TypeScript  •  React  •  Tailwind CSS',
@@ -29,6 +30,7 @@ export const site = {
       '/assets/images/portrait-alt-02.png',
       '/assets/images/portrait-alt-03.png',
     ],
+    project: '/assets/projects/cyse-website-dark.png'
   },
   about: {
     heading: ['I build', 'digital', 'systems.'],
@@ -50,13 +52,3 @@ export const site = {
 } as const
 
 export type Site = typeof site
-
-export const projects = {
-  description:
-    'I design and build high-performance digital experiences, products and applications.',
-  taglineLines: ['Web developer /', 'Digital creator'],
-  heroHeading: ['Full-stack', 'Developer'],
-  heroCopy:
-    'I design and build high-performance digital experiences, products and applications.',
-  stack: 'Next.js / TypeScript  •  React  •  Tailwind CSS',
-}

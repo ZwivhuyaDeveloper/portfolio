@@ -8,11 +8,11 @@ export function Navigation() {
       className="absolute inset-x-0 top-0 z-[70] flex h-[7%] min-h-14 items-center justify-between px-[3.4%] font-display animate-[hero-fade_1.2s_0.4s_both]"
     >
       <Link
-        href="#top"
+        href="/"
         aria-label="Home"
         className="font-display text-[clamp(1.7rem,1.9cqw,999px)] italic font-extrabold leading-none tracking-[0.01em]"
       >
-        ZM.
+        ZW<i className="not-italic text-accent">.</i>
       </Link>
 
       <ul className="absolute left-1/2 m-0 flex -translate-x-1/2 list-none gap-[3.1cqw] p-0 font-display 
