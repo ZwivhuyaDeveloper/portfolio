@@ -25,7 +25,7 @@ export function AboutSection() {
       </div>
 
       <div>
-        <p className="mb-6 text-muted">{site.about.body}</p>
+        <p className="text-[clamp(1rem,2.5vw,1.25rem)] mb-6 text-muted">{site.about.body}</p>
         <Link
           href="#contact"
           className="text-[11px] uppercase tracking-[0.16em] text-accent"

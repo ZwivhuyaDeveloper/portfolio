@@ -10,7 +10,7 @@ export function SkillsSection() {
       id="skills"
       className="relative grid grid-cols-[12rem_repeat(5,1fr)] items-center border-t border-line px-[var(--pad)] py-20 max-[900px]:block"
     >
-      <div>
+      <div className="">
         <Eyebrow>Technology</Eyebrow>
         <h2 className="display text-[3.6rem]">
           Skills<span className="lime">_</span>
@@ -20,7 +20,7 @@ export function SkillsSection() {
       {rowA.map((s) => (
         <div
           key={s}
-          className="border-l border-line px-[1.2rem] py-[0.7rem] max-[900px]:border-l-0 max-[900px]:border-t"
+          className="text-[clamp(1rem,1.2vw,1rem)] border-l border-line px-[1.2rem] py-[0.7rem] max-[900px]:border-l-0 max-[900px]:border-t"
         >
           {s}
         </div>
@@ -31,7 +31,7 @@ export function SkillsSection() {
       {rowB.map((s) => (
         <div
           key={s}
-          className="border-l border-t border-line px-[1.2rem] py-[0.7rem] max-[900px]:border-l-0 max-[900px]:border-t"
+          className="text-[clamp(1rem,1.2vw,1rem)] border-l border-t border-line px-[1.2rem] py-[0.7rem] max-[900px]:border-l-0 max-[900px]:border-t"
         >
           {s}
         </div>

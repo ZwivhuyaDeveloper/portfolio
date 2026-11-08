@@ -34,7 +34,7 @@ export function ProjectItem({
         <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88]">
           {project.title}
         </h3>
-        <p className="mb-4 text-muted">{project.description}</p>
+        <p className="text-[clamp(1rem,2.5vw,1.25rem)] mb-4 text-muted">{project.description}</p>
         <Link
           href={project.href}
           className="inline-block border-b border-foreground py-[0.7rem] font-display text-[11px] font-bold 

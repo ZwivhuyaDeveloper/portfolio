@@ -78,7 +78,7 @@ export function ContactSection() {
       </div>
 
       <div className="relative z-10">
-        <p className="mb-6">{site.contact.body}</p>
+        <p className="text-[clamp(1rem,2.2vw,1.25rem)] mb-6">{site.contact.body}</p>
         <Button href={`mailto:${site.email}`}>{site.contact.cta} →</Button>
         <div className="mt-8 flex flex-wrap gap-8 text-[11px] uppercase tracking-[0.16em] text-muted">
           {site.links.map((l) => (

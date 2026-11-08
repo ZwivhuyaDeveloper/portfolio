@@ -35,7 +35,7 @@ export function ProcessSection() {
           <b className="block font-display text-[1.4rem] font-extrabold uppercase tracking-[0.06em]">
             {step.title}
           </b>
-          <span className="text-muted">{step.body}</span>
+          <span className="text-muted text-[clamp(1rem,1.2vw,1.25rem)]]">{step.body}</span>
         </div>
       ))}
     </section>

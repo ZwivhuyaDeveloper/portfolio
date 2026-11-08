@@ -23,11 +23,11 @@ export function HeroMetadata() {
           rounded-full border border-foreground/80 animate-[hero-bob_2.4s_ease-in-out_infinite]"
         >
           <Image 
-            src={arrowIcon}
+            src={arrowIcon2}
             alt="Arrow icon"
             height={500}
             width={500}
-            className="h-[2.9cqw] w-[2.9cqw] max-[900px]:h-4 max-[900px]:w-4"                 
+            className="h-[2cqw] w-[2cqw]  justify-center max-[900px]:h-4 max-[900px]:w-4"                 
           />
 
         </span>
