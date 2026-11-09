@@ -1,11 +1,6 @@
-import { HeroCopy } from '@/components/landing/hero/hero-copy'
 import { HeroDecor } from '@/components/landing/hero/hero-decor'
-import { HeroMetadata } from '@/components/landing/hero/hero-metadata'
-import { HeroPortrait } from '@/components/landing/hero/hero-portrait'
 import { HeroStage } from '@/components/landing/hero/hero-stage'
-import { HeroStats } from '@/components/landing/hero/hero-stats'
 import { HeroTypography } from '@/components/landing/hero/hero-typography'
-import { Navigation } from '@/components/landing/navigation'
 import React from 'react'
 import ProjectCopy from './project-copy'
 import { ProjectImage } from './Project-Image'
@@ -31,8 +26,6 @@ export default function Hero() {
         />
         <HeroDecor />
         <ProjectCopy />
-        <HeroStats />
-        <HeroMetadata />
       </HeroStage>
     </header>
   )

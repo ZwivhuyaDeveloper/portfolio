@@ -10,7 +10,7 @@ export default function ProjectCopy() {
       {/* tag */}
       <div className="font-display text-[clamp(0.9rem,1.28cqw,999px)] font-medium uppercase leading-[1.25] tracking-[0.14em] 
       text-white after:mt-[2.3cqw] after:block after:h-px after:w-[6.9cqw] after:bg-foreground/70 after:content-[''] 
-        max-[900px]:text-[0.8rem] max-[900px]:after:mt-[3vw] backdrop-blur-[1px] max-[900px]:backdrop-blur-[2px] w-fit"
+        max-[900px]:text-[0.8rem] max-[900px]:after:mt-[3vw] backdrop-blur-[1px] max-[900px]:backdrop-blur-[2px] w-fit hidden"
       >
         {site.taglineLines.map((line, i) => (
           <span key={line}>
@@ -44,7 +44,7 @@ export default function ProjectCopy() {
       </p>
 
       {/* buttons */}
-      <div className="flex items-center gap-[2cqw] max-[900px]:gap-[5vw] ">
+      <div className="flex items-center gap-[2cqw] max-[900px]:gap-[5vw] hidden">
         <Link
           href="#work"
           className="group inline-flex items-center gap-[0.8cqw] bg-accent px-[1.7cqw] py-[0.80cqw] font-display 

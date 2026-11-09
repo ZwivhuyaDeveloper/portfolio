@@ -1,134 +1,137 @@
 import Link from 'next/link'
 import type { Project } from '@/data/projects'
 import { ProjectImageSlot } from '@/components/projects/ProjectImageSlot'
- 
-/* ---------- local helpers ---------- */
-const Eyebrow = ({ n, label }: { n: string; label: string }) => (
-  <p className="mono mb-6 flex items-center gap-3 text-accent">
-    <span>{n}</span><i aria-hidden className="h-px w-10 bg-accent" /><span className="text-muted">{label}</span>
-  </p>
-)
- 
-const Title = ({ a, b }: { a: string; b: string }) => (
-  <h2 className="d text-[clamp(3rem,6.2vw,6.2rem)] font-black leading-[.88] tracking-[-.005em]">
-    <span className="block">{a}</span>
-    <span className="grad block pr-3">{b}</span>
-  </h2>
-)
- 
-const Body = ({ children }: { children: React.ReactNode }) => (
-  <p className="mt-7 max-w-[26rem] text-[15px] leading-[1.75] text-muted">{children}</p>
-)
- 
-const Ghost = ({ n }: { n: string }) => (
-  <span aria-hidden className="d pointer-events-none absolute right-pad top-6 text-[clamp(6rem,14vw,14rem)] leading-none text-transparent [-webkit-text-stroke:1px_rgba(242,242,240,.09)]">
-    {n}
-  </span>
-)
- 
-const brackets = [
-  'left-[-6px] top-[-6px] border-l-2 border-t-2',
-  'right-[-6px] top-[-6px] border-r-2 border-t-2',
-  'bottom-[-6px] left-[-6px] border-b-2 border-l-2',
-  'bottom-[-6px] right-[-6px] border-b-2 border-r-2',
-]
-const Frame = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative">
-    {brackets.map((c) => (
-      <i key={c} aria-hidden className={`pointer-events-none absolute z-20 h-4 w-4 border-accent ${c}`} />
-    ))}
-    {children}
-  </div>
-)
- 
-const Fig = ({ n }: { n: string }) => (
-  <span className="mono absolute left-3 top-3 z-10 bg-background/80 px-2 py-1 text-accent">Fig. {n}</span>
-)
- 
-const spans = ['md:col-span-7', 'md:col-span-5', 'md:col-span-4', 'md:col-span-4', 'md:col-span-4']
+
 const pad2 = (n: number) => String(n).padStart(2, '0')
-const arrow =
-  'group grid h-14 w-14 place-items-center border border-accent text-accent transition-colors hover:bg-accent hover:text-background'
- 
+
 type Props = { project: Project; prev: Project; next: Project; totalProjects: number }
- 
+
 export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) {
   const name = project.title.join(' ')
- 
+
   return (
     <>
-      {/* Challenge */}
-      <section id="challenge" className="relative grid items-center gap-10 overflow-hidden border-b border-line px-pad py-16 md:grid-cols-12 md:py-24">
-        <Ghost n="01" />
-        <div className="relative md:col-span-4">
-          <Eyebrow n="01" label="Context" />
-          <Title a="The" b="Challenge." />
-          <Body>{project.challenge}</Body>
-        </div>
-        <div className="relative md:col-span-8">
-          <Frame>
-            <ProjectImageSlot art="hall" src={project.gallery[0]?.src || project.cover} alt={`${name} challenge`} className="aspect-[16/8] w-full" />
-            {/* vertical keyword rail */}
-            <ul className="mono absolute inset-y-0 right-0 z-10 hidden w-32 flex-col justify-center gap-3 border-l border-line bg-background/75 pl-5 text-muted md:flex">
-              {project.keywords.map((k, i) => (
-                <li key={k} className={i === 0 ? 'text-foreground' : ''}>{k}</li>
-              ))}
-            </ul>
-            {/* crosshair target */}
-            <svg aria-hidden viewBox="0 0 120 120" className="pointer-events-none absolute bottom-6 right-40 z-10 hidden h-24 w-24 text-accent md:block" fill="none" stroke="currentColor" strokeWidth="1">
-              <circle cx="60" cy="60" r="56" opacity=".5" /><circle cx="60" cy="60" r="34" /><path d="M60 20v80M20 60h80" />
-            </svg>
-          </Frame>
-        </div>
+      {/* 01 - The Challenge (Mirrors ProjectItems exactly) */}
+      <section id="challenge" className="border-b border-line px-pad py-16 md:py-24">
+        <article className="group grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center md:gap-8">
+          
+          {/* 1. Title / Text */}
+          <div className="md:col-span-3 md:col-start-1 pl-5 md:pl-10">
+            <div className="font-display italic font-black text-[clamp(5rem,12vw,11rem)] leading-[0.8] text-transparent [-webkit-text-stroke:1px_var(--color-line)] transition-[-webkit-text-stroke-color] duration-300 group-hover:[-webkit-text-stroke-color:var(--color-accent)]">
+              01
+            </div>
+            <div className="text-[11px] uppercase tracking-[0.16em] text-accent">
+              Context
+            </div>
+            <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88] w-full">
+              The Challenge.
+            </h3>
+            <p className="text-[clamp(1rem,2.0vw,1.25rem)] mb-4 text-muted">
+              {project.challenge}
+            </p>
+          </div>
+
+          {/* 2. Image */}
+          <div className="md:col-span-6 md:col-start-6">
+            <ProjectImageSlot
+              art="hall"
+              src={project.gallery[0]?.src || project.cover}
+              alt={`${name} challenge`}
+              className={`aspect-video [&_img]:transition-transform [&_img]:duration-[600ms] [&_svg]:transition-transform [&_svg]:duration-[600ms] group-hover:[&_img]:scale-[1.04] group-hover:[&_svg]:scale-[1.04]`}
+            />
+          </div>
+
+          {/* 3. Meta Far Right */}
+          <dl className="mono grid gap-6 md:col-span-3 md:col-start-12 md:border-l md:border-line md:pl-6">
+            <div>
+              <dt className="sr-only">Keywords</dt>
+              <dd className="leading-6 text-foreground">
+                {project.keywords.map(k => <span key={k} className="block">{k}</span>)}
+              </dd>
+            </div>
+          </dl>
+
+        </article>
       </section>
- 
-      {/* Solution */}
-      <section className="relative grid items-center gap-10 overflow-hidden border-b border-line px-pad py-16 md:grid-cols-12 md:py-24">
-        <Ghost n="02" />
-        <div className="relative md:col-span-4">
-          <Eyebrow n="02" label="Approach" />
-          <Title a="The" b="Solution." />
-          <Body>{project.solution}</Body>
-          <p className="mono mt-8 text-muted">Built with</p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {project.tech.map((t) => (
-              <li key={t} className="mono border border-line px-3 py-2 text-foreground transition-colors hover:border-accent hover:text-accent">{t}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="relative md:col-span-8">
-          <Frame>
-            <ProjectImageSlot art="chart" src={project.gallery[1]?.src || project.cover} alt={`${name} solution`} className="aspect-[16/9] w-full" />
-          </Frame>
-        </div>
+
+      {/* 02 - The Solution (Mirrors ProjectItems exactly) */}
+      <section className="border-b border-line px-pad py-16 md:py-24">
+        <article className="group grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center md:gap-8">
+          
+          {/* 1. Title / Text */}
+          <div className="md:col-span-3 md:col-start-1 pl-5 md:pl-10">
+            <div className="font-display italic font-black text-[clamp(5rem,12vw,11rem)] leading-[0.8] text-transparent [-webkit-text-stroke:1px_var(--color-line)] transition-[-webkit-text-stroke-color] duration-300 group-hover:[-webkit-text-stroke-color:var(--color-accent)]">
+              02
+            </div>
+            <div className="text-[11px] uppercase tracking-[0.16em] text-accent">
+              Approach
+            </div>
+            <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88] w-full">
+              The Solution.
+            </h3>
+            <p className="text-[clamp(1rem,2.0vw,1.25rem)] mb-4 text-muted">
+              {project.solution}
+            </p>
+          </div>
+
+          {/* 2. Image */}
+          <div className="md:col-span-6 md:col-start-6">
+            <ProjectImageSlot
+              art="chart"
+              src={project.gallery[1]?.src || project.cover}
+              alt={`${name} solution`}
+              className={`aspect-video [&_img]:transition-transform [&_img]:duration-[600ms] [&_svg]:transition-transform [&_svg]:duration-[600ms] group-hover:[&_img]:scale-[1.04] group-hover:[&_svg]:scale-[1.04]`}
+            />
+          </div>
+
+          {/* 3. Meta Far Right */}
+          <dl className="mono grid gap-6 md:col-span-3 md:col-start-12 md:border-l md:border-line md:pl-6">
+            <div>
+              <dt className="sr-only">Tech Stack</dt>
+              <dd className="leading-6 text-foreground">
+                {project.tech.map(t => <span key={t} className="block">{t}</span>)}
+              </dd>
+            </div>
+          </dl>
+
+        </article>
       </section>
- 
-      {/* Gallery */}
+
+      {/* 03 - Gallery (4 Uniform Images Grid) */}
       <section aria-labelledby="gallery" className="border-b border-line px-pad py-16 md:py-24">
         <div className="mb-12 flex items-end gap-6">
-          <div>
-            <Eyebrow n="03" label="Visual archive" />
-            <h2 id="gallery" className="d text-[clamp(2.6rem,5vw,4.6rem)] font-black">Gallery<span className="text-accent">_</span></h2>
-          </div>
+          <h2 id="gallery" className="d text-[clamp(2.6rem,5vw,4.6rem)] font-black">
+            Gallery<span className="text-accent">_</span>
+          </h2>
           <hr className="mb-4 flex-1 border-line" />
           <span className="mono mb-3 text-muted">{pad2(project.gallery.length)} images</span>
         </div>
-        <div className="grid gap-x-6 gap-y-10 md:grid-cols-12">
+        
+        {/* Strict 4-column grid for perfectly uniform images */}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 pl-5 md:pl-10">
           {project.gallery.map((g, n) => (
-            <figure key={`${g.src}-${n}`} className={`group ${spans[n % spans.length]}`}>
-              <ProjectImageSlot art={g.art} src={g.src} alt={`${name}: ${g.caption}`} className={`w-full ${n % 5 < 2 ? 'aspect-[16/10]' : 'aspect-[4/3]'}`}>
-                <Fig n={pad2(n + 1)} />
+            <figure key={`${g.src}-${n}`} className="group flex flex-col">
+              <ProjectImageSlot 
+                art={g.art} 
+                src={g.src} 
+                alt={`${name}: ${g.caption}`} 
+                className={`aspect-[4/3] w-full [&_img]:transition-transform [&_img]:duration-[600ms] [&_svg]:transition-transform [&_svg]:duration-[600ms] group-hover:[&_img]:scale-[1.04] group-hover:[&_svg]:scale-[1.04]`}
+              >
+                <span className="mono absolute left-3 top-3 z-10 bg-background/80 px-2 py-1 text-accent">
+                  Fig. {pad2(n + 1)}
+                </span>
               </ProjectImageSlot>
+              
               <figcaption className="mono mt-3 flex justify-between border-t border-line pt-3 text-muted transition-colors group-hover:border-accent group-hover:text-foreground">
-                <span>{g.caption}</span>
+                <span className="truncate pr-4">{g.caption}</span>
                 <span className="text-accent transition-transform group-hover:rotate-90">+</span>
               </figcaption>
             </figure>
           ))}
         </div>
       </section>
- 
-      {/* Key features + pager */}
+
+      {/* 04 - Key features + pager */}
       <section className="grid items-center gap-10 border-b border-line px-pad py-16 md:grid-cols-12 md:py-20">
         <h2 className="d text-[clamp(2.8rem,5vw,4.6rem)] font-black leading-[.88] md:col-span-3">
           Key<br /><span className="grad pr-3">Features.</span>
@@ -148,10 +151,10 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
             <span className="ml-2 text-xl text-muted">/ {pad2(totalProjects)}</span>
           </span>
           <div className="flex gap-3">
-            <Link href={`/projects/${prev.slug}`} aria-label={`Previous: ${prev.title.join(' ')}`} className={arrow}>
+            <Link href={`/projects/${prev.slug}`} aria-label={`Previous: ${prev.title.join(' ')}`} className="group grid h-14 w-14 place-items-center border border-accent text-accent transition-colors hover:bg-accent hover:text-background">
               <span className="transition-transform group-hover:-translate-x-1">←</span>
             </Link>
-            <Link href={`/projects/${next.slug}`} aria-label={`Next: ${next.title.join(' ')}`} className={arrow}>
+            <Link href={`/projects/${next.slug}`} aria-label={`Next: ${next.title.join(' ')}`} className="group grid h-14 w-14 place-items-center border border-accent text-accent transition-colors hover:bg-accent hover:text-background">
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>

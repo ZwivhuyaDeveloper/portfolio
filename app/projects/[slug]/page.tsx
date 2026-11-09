@@ -3,11 +3,9 @@ import type { Metadata } from 'next'
 import { SiteFooter } from '@/components/SiteFooter'
 import { Navigation } from '@/components/landing/navigation'
 import { getProject, projects } from '@/data/projects'
-import { CaseStudyHero } from '@/components/projects/hero/caseStudy-hero'
+import CaseStudyHero from '@/components/projects/hero/caseStudy-hero'
 import { CaseStudyDetails } from '@/components/projects/hero/caseStudy-details'
 import { CaseStudyBanner } from '@/components/projects/hero/casestudy-banner'
-
-// Import our new split components
 
 
 type Props = { params: { slug: string } }
@@ -34,7 +32,9 @@ export default function CaseStudy({ params }: Props) {
     <>
       <Navigation />
       <main>
+        {/* Replaced the old grid-based hero with the new composed hero */}
         <CaseStudyHero project={p} />
+        
         <CaseStudyDetails 
           project={p} 
           prev={prev} 

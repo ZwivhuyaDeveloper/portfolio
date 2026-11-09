@@ -1,98 +1,89 @@
-import Link from 'next/link'
-import type { Project } from '@/data/projects'
+import { HeroDecor } from '@/components/landing/hero/hero-decor'
+import { HeroStage } from '@/components/landing/hero/hero-stage'
 import { ProjectImageSlot } from '@/components/projects/ProjectImageSlot'
- 
-const grid =
-  '[background-image:linear-gradient(to_right,rgba(242,242,240,.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(242,242,240,.05)_1px,transparent_1px)] [background-size:6rem_6rem] [mask-image:linear-gradient(180deg,#000_30%,transparent)]'
- 
-const corners = [
-  'left-[-6px] top-[-6px] border-l-2 border-t-2',
-  'right-[-6px] top-[-6px] border-r-2 border-t-2',
-  'bottom-[-6px] left-[-6px] border-b-2 border-l-2',
-  'bottom-[-6px] right-[-6px] border-b-2 border-r-2',
-]
- 
-export function CaseStudyHero({ project }: { project: Project }) {
-  const name = project.title.join(' ')
- 
+import type { Project } from '@/data/projects'
+import React from 'react'
+import { CaseStudyCopy } from './caseStudy-copy'
+import { CaseStudyStats } from './caseStudy-stats'
+
+export default function CaseStudyHero({ project }: { project: Project }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-line pb-16 pt-32 md:pb-24 md:pt-40">
-      {/* technical grid + crosshairs */}
-      <div aria-hidden className={`absolute inset-0 -z-20 ${grid}`} />
-      {['left-[8%] top-[22%]', 'right-[8%] top-[38%]', 'left-[46%] bottom-[10%]'].map((p) => (
-        <span key={p} aria-hidden className={`absolute -z-10 hidden h-3 w-3 md:block ${p} before:absolute before:left-1/2 before:h-full before:w-px before:bg-foreground/70 after:absolute after:top-1/2 after:h-px after:w-full after:bg-foreground/70`} />
-      ))}
- 
-      {/* lime slab */}
-      <div aria-hidden className="absolute inset-y-0 right-[22%] -z-10 hidden w-[11%] bg-gradient-to-b from-accent to-[#7fb800] md:block">
-        <span className="absolute inset-0 [background-image:linear-gradient(115deg,transparent_55%,rgba(5,5,5,.4))]" />
-        <span className="mono absolute bottom-8 left-1/2 -translate-x-1/2 text-background [writing-mode:vertical-rl]">
-          Case study / {project.number}
-        </span>
-      </div>
- 
-      <div className="relative z-10 grid gap-12 px-pad md:grid-cols-12 md:gap-6">
-        {/* Copy */}
-        <div className="relative z-20 flex flex-col justify-center md:col-span-5">
-          <Link href="/projects" className="mono group inline-flex w-fit items-center gap-3 border-b border-accent pb-1 text-accent">
-            <span className="transition-transform group-hover:-translate-x-1">←</span> Back to projects
-          </Link>
- 
-          <h1 className="d up mt-10 text-[clamp(3.4rem,7.8vw,8.2rem)] font-black leading-[.84] tracking-[-.01em] [text-shadow:0_0_60px_rgba(5,5,5,.9)]">
-            <span className="block">{project.title[0]}</span>
-            <span className="block">{project.title[1]}</span>
-          </h1>
- 
-          <p className="mono mt-8 flex items-center gap-4 text-foreground">
-            {project.type}
-            <i aria-hidden className="h-px flex-1 bg-line" />
-          </p>
-          <p className="mt-6 max-w-[26rem] text-[15px] leading-[1.75] text-muted">{project.description}</p>
- 
-          <div className="mt-10 flex flex-wrap items-center gap-8">
-            {project.href && (
-              <Link href={project.href} className="btn">View live project <span aria-hidden>→</span></Link>
-            )}
-            <a href="#challenge" className="mono group border-b border-foreground pb-1 transition-colors hover:border-accent hover:text-accent">
-              Scroll <span aria-hidden className="inline-block transition-transform group-hover:translate-y-1">↓</span>
-            </a>
-          </div>
+    <header
+      id="top"
+      className="relative isolate h-svh min-h-[700px] overflow-hidden bg-background"
+    >
+      <HeroStage>
+        
+        {/* Background Technical Grid */}
+        <div className="pointer-events-none absolute inset-0 z-10 [mask-image:linear-gradient(to_bottom,#000_20%,transparent_90%)]">
+          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              {/* Main Grid Lines */}
+              <pattern
+                id="hero-grid"
+                width="60"
+                height="60"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 60 0 L 0 0 0 60"
+                  fill="none"
+                  stroke="rgba(242, 242, 240, 0.15)"
+                  strokeWidth="1"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </pattern>
+              
+              {/* Subtle Crosshairs at Intersections */}
+              <pattern
+                id="hero-crosshairs"
+                width="60"
+                height="60"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="0" cy="0" r="1.5" fill="rgba(242, 242, 240, 0.4)" />
+              </pattern>
+            </defs>
+            
+            {/* Render grid layers */}
+            <rect width="100%" height="100%" fill="url(#hero-grid)" />
+            <rect width="100%" height="100%" fill="url(#hero-crosshairs)" />
+          </svg>
         </div>
- 
-        {/* Hero image */}
-        <div className="relative z-0 md:col-span-5 md:-ml-28 md:self-center">
-          <div className="relative">
-            {corners.map((c) => (
-              <i key={c} aria-hidden className={`pointer-events-none absolute z-20 h-4 w-4 border-accent ${c}`} />
-            ))}
-            <ProjectImageSlot
-              art={project.art}
-              src={project.cover}
-              alt={`${name} main screen`}
-              className="aspect-[16/10] w-full shadow-[0_30px_80px_rgba(0,0,0,.7)]"
-            />
-          </div>
-          <p className="mono mt-3 flex justify-between text-muted"><span>Fig. 00</span><span>Main screen</span></p>
+
+        {/* Left Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-30 
+          bg-[radial-gradient(34%_46%_at_0%_100%,rgba(160,230,0,0.6),rgba(70,110,0,0.28)_50%,transparent_78%)]"
+        />
+
+        {/* Project Image */}
+        <div className="absolute bottom-[5%] right-[5%] z-40 w-[60%] top-[15%] max-[900px]:bottom-[20%] max-[900px]:right-[5%] max-[900px]:w-[90%]">
+          <ProjectImageSlot
+            art={project.art}
+            src={project.cover}
+            alt={project.alt}
+            className="h-full w-full object-contain object-bottom shadow-[0_30px_80px_rgba(0,0,0,.7)]"
+          />
         </div>
- 
-        {/* Project info */}
-        <aside className="md:col-span-2 md:border-l md:border-line md:pl-6 md:pt-4">
-          <h2 className="mono mb-6 border-b border-line pb-3 text-accent">Project info</h2>
-          <dl className="grid grid-cols-2 gap-6 md:grid-cols-1 md:gap-7">
-            {[
-              ['Category', project.category],
-              ['Tech stack', project.tech.join(', ')],
-              ['Year', project.year],
-              ['Index', `Project / ${project.number}`],
-            ].map(([k, v]) => (
-              <div key={k}>
-                <dt className="mono text-[10px] text-muted">{k}</dt>
-                <dd className="mt-2 text-[15px] leading-snug text-foreground">{v}</dd>
-              </div>
-            ))}
-          </dl>
-        </aside>
-      </div>
-    </section>
+
+        {/* Right Glow / Vignette */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[45] 
+          bg-[radial-gradient(30%_42%_at_100%_100%,rgba(130,210,0,0.4),transparent_72%),linear-gradient(180deg,transparent_70%,#050505_130%)]"
+        />
+        
+        <HeroDecor />
+        
+        {/* Text Content (Left Bottom) */}
+        <CaseStudyCopy project={project} />
+        
+        {/* Metadata (Right Side) */}
+        <CaseStudyStats project={project} />
+        
+      </HeroStage>
+    </header>
   )
 }
