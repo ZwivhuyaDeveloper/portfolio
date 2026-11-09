@@ -5,7 +5,7 @@ export type Project = {
   number: string
   category: string
   type: string
-  title: [string]
+  title: [string, string]
   summary: string
   description: string
   href: string
@@ -30,26 +30,26 @@ export const projects: Project[] = [
     index: '01',
     number: '01',
     category: 'Website',
-    type: 'Web Application / Finance',
-    title: ['Cyclespace Exchange'],
-    summary: 'A modern decentralized platform for trading digital assets, review news, and market updates.',
-    description: 'Cyclespace Exchange is a decentralized platform that allows users to trade digital assets securely and efficiently, featuring real-time analytics and a sleek interface.',
+    type: 'Landing Page / News',
+    title: ['Cyclespace', 'Exchange'],
+    summary: 'A modern website for Cyclespace Exchange, review news, and market updates.',
+    description: 'Cyclespace Exchange is a website that allows users to review updates, featuring real-time news and a sleek user interface.',
     href: '/projects/cyclespace-exchange',
     cover: '/assets/projects/cyse-website.png',
     image: '/assets/projects/cyse-website.png',
-    assets: ['/assets/projects/cyse-website-01.png', '/assets/projects/cyse-website-02.png'],
+    assets: ['/assets/projects/cyse-about.png', '/assets/projects/cyse-display.png'],
     alt: 'Cyclespace Exchange Website',
     art: 'tower',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     year: '2025 - Preset',
-    keywords: ['Analyze', 'Trade', 'Optimize'],
-    challenge: 'Creating a trading dashboard that is both powerful and easy to use. The goal was to deliver real-time market data, advanced charting tools and a seamless user experience for traders of all levels.',
-    solution: 'A modern, high-performance web application built with Next.js and TypeScript, featuring real-time data visualization, customizable dashboards and advanced trading tools.',
+    keywords: ['Landing Page', 'News Platform', 'SEO'],
+    challenge: 'Creating a website that is both beautifull and easy to use. The goal was to design a responsive website that converts users , advanced market news aggrigation and updates .',
+    solution: 'A modern, high-performance website built with Next.js, TypeScript, GSAP and Sanity CMS featuring curated news, easy User-Experience and navigation flow.',
     gallery: [
-      { src: '/assets/projects/cyse-website-01.png', art: 'chart', caption: 'Dashboard Overview' },
-      { src: '/assets/projects/cyse-website-02.png', art: 'tower', caption: 'Market Analytics' },
+      { src: '/assets/projects/cyse-features.png', art: 'chart', caption: 'Website Overview' },
+      { src: '/assets/projects/cyse-section.png', art: 'tower', caption: 'Market Analytics' },
     ],
-    features: ['Real-time market data', 'Advanced charting tools', 'Customizable workspace', 'Performance optimized'],
+    features: ['Real-time market news', 'Sleek modern UI', 'Performance optimized'],
   },
   {
     id: 'project-02',
@@ -57,8 +57,8 @@ export const projects: Project[] = [
     index: '02',
     number: '02',
     category: 'Web Application',
-    type: 'Mobile / Fintech',
-    title: ['Cyclespace App'],
+    type: 'Web App / Fintech',
+    title: ['Cyclespace', 'App'],
     summary: 'A decentralized mobile application for trading digital assets securely and efficiently.',
     description: 'The Cyclespace mobile app brings the power of decentralized finance to your pocket, offering seamless trading, portfolio tracking, and live market updates.',
     href: '/projects/cyclespace-app',
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     number: '03',
     category: 'Website',
     type: 'E-Commerce / Beauty',
-    title: ['Lumiere Cosmetics'],
+    title: ['Lumiere', 'Cosmetics'],
     summary: 'A high-end cosmetic brand website offering skincare, makeup, and haircare products.',
     description: 'Lumiere is a cosmetic brand that offers a range of beauty products, including skincare, makeup, and haircare. The website provides information about the brand, its products, and its mission.',
     href: '/projects/lumiere',

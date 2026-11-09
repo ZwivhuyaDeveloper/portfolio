@@ -7,21 +7,25 @@ import CaseStudyHero from '@/components/projects/hero/caseStudy-hero'
 import { CaseStudyDetails } from '@/components/projects/hero/caseStudy-details'
 import { CaseStudyBanner } from '@/components/projects/hero/casestudy-banner'
 
-
-type Props = { params: { slug: string } }
+// 1. Update the type to reflect that params is a Promise
+type Props = { params: Promise<{ slug: string }> }
 
 export const generateStaticParams = () => projects.map((p) => ({ slug: p.slug }))
 
-export function generateMetadata({ params }: Props): Metadata {
-  const p = getProject(params.slug)
+// 2. Make the function async and await params
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const p = getProject(slug)
   return { 
     title: p ? `${p.title.join(' ')} Case Study` : 'Project', 
     description: p?.description 
   }
 }
 
-export default function CaseStudy({ params }: Props) {
-  const p = getProject(params.slug)
+// 3. Make the component async and await params
+export default async function CaseStudy({ params }: Props) {
+  const { slug } = await params
+  const p = getProject(slug)
   if (!p) notFound()
 
   const i = projects.findIndex((x) => x.slug === p.slug)
@@ -32,7 +36,6 @@ export default function CaseStudy({ params }: Props) {
     <>
       <Navigation />
       <main>
-        {/* Replaced the old grid-based hero with the new composed hero */}
         <CaseStudyHero project={p} />
         
         <CaseStudyDetails 

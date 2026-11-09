@@ -23,8 +23,9 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
             <div className="text-[11px] uppercase tracking-[0.16em] text-accent">
               Context
             </div>
-            <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88] w-full">
-              The Challenge.
+            <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88] w-full gap-2">
+              <span className='block w-fit origin-left'>The</span>
+              <span className='block w-fit origin-left text-accent'>Challenge.</span>
             </h3>
             <p className="text-[clamp(1rem,2.0vw,1.25rem)] mb-4 text-muted">
               {project.challenge}
@@ -35,7 +36,7 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
           <div className="md:col-span-6 md:col-start-6">
             <ProjectImageSlot
               art="hall"
-              src={project.gallery[0]?.src || project.cover}
+              src={project.assets[0]}
               alt={`${name} challenge`}
               className={`aspect-video [&_img]:transition-transform [&_img]:duration-[600ms] [&_svg]:transition-transform [&_svg]:duration-[600ms] group-hover:[&_img]:scale-[1.04] group-hover:[&_svg]:scale-[1.04]`}
             />
@@ -67,7 +68,8 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
               Approach
             </div>
             <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88] w-full">
-              The Solution.
+              <span className='block w-fit origin-left'>The</span>
+              <span className='block w-fit origin-left text-accent'>Solution.</span>
             </h3>
             <p className="text-[clamp(1rem,2.0vw,1.25rem)] mb-4 text-muted">
               {project.solution}
@@ -78,7 +80,7 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
           <div className="md:col-span-6 md:col-start-6">
             <ProjectImageSlot
               art="chart"
-              src={project.gallery[1]?.src || project.cover}
+              src={project.assets[1]}
               alt={`${name} solution`}
               className={`aspect-video [&_img]:transition-transform [&_img]:duration-[600ms] [&_svg]:transition-transform [&_svg]:duration-[600ms] group-hover:[&_img]:scale-[1.04] group-hover:[&_svg]:scale-[1.04]`}
             />
@@ -99,7 +101,7 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
 
       {/* 03 - Gallery (4 Uniform Images Grid) */}
       <section aria-labelledby="gallery" className="border-b border-line px-pad py-16 md:py-24">
-        <div className="mb-12 flex items-end gap-6">
+        <div className="mb-12 flex items-end gap-6 md:px-10">
           <h2 id="gallery" className="d text-[clamp(2.6rem,5vw,4.6rem)] font-black">
             Gallery<span className="text-accent">_</span>
           </h2>

@@ -81,8 +81,8 @@ export default function CaseStudyHero({ project }: { project: Project }) {
         <CaseStudyCopy project={project} />
         
         {/* Metadata (Right Side) */}
-        <CaseStudyStats project={project} />
-        
+        {/* <CaseStudyStats project={project} /> */}
+
       </HeroStage>
     </header>
   )

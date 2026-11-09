@@ -9,27 +9,28 @@ export function CaseStudyCopy({ project }: { project: Project }) {
       <div className="mb-[2.4cqw] flex flex-col gap-4">
         <Link 
           href="/projects" 
-          className="group inline-flex w-fit items-center gap-2 border-b border-accent pb-1 font-display text-[clamp(0.8rem,1.02cqw,999px)] font-bold uppercase tracking-[0.1em] text-accent transition-colors hover:text-white"
+          className="group inline-flex w-fit items-center gap-2 border-b border-accent pb-1 font-display text-[clamp(0.8rem,1.02cqw,999px)]
+          font-bold uppercase tracking-[0.1em] text-accent transition-colors hover:text-white"
         >
           <span className="transition-transform group-hover:-translate-x-1">←</span> Back to projects
         </Link>
-        <div className="w-fit font-display text-[clamp(0.9rem,1.28cqw,999px)] font-medium uppercase leading-[1.25] tracking-[0.14em] text-foreground/80">
+        <div className="w-fit font-display text-[clamp(0.9rem,1cqw,999px)] font-medium uppercase leading-[1.25] tracking-[0.14em] text-foreground/80">
           {project.category} <br /> {project.type}
         </div>
       </div>
 
       {/* Headline */}
-      <h1 className="m-0 font-display text-[clamp(3.6rem,6.55cqw,999px)] font-extrabold italic uppercase leading-[0.8] tracking-[-0.02em] max-[900px]:text-[clamp(2.5rem,14vw,4.5rem)]">
+      <h1 className="m-0 font-display text-[clamp(3.6rem,3.2cqw,999px)] font-extrabold italic uppercase leading-[0.8] tracking-[-0.02em] max-[900px]:text-[clamp(2.5rem,14vw,4.5rem)]">
         <span className="block w-fit origin-left scale-x-[1.24] bg-linear-to-b from-white to-[#9d9d99] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-100">
           {project.title[0]}
         </span>
-        <span className="block w-fit origin-left scale-x-[1.24] bg-linear-to-b from-[#f3ff7c] via-accent to-[#9ad800] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-100">
+        <span className="block w-fit origin-left scale-x-[1.24] text-accent max-[900px]:scale-x-100">
           {project.title[1]}
         </span>
       </h1>
 
       {/* Paragraph */}
-      <p className="my-[1.5cqw] mb-[1.8cqw] max-w-[31cqw] font-body text-[clamp(0.95rem,1.2cqw,999px)] leading-[1.35] text-foreground max-[900px]:my-[3vw] max-[900px]:max-w-xs max-[900px]:text-[0.85rem] max-[900px]:[text-shadow:0_0_14px_#000]">
+      <p className="my-[1.5cqw] mb-[1.8cqw] max-w-[31cqw] font-body text-[clamp(0.95rem,1cqw,999px)] leading-[1.35] text-foreground max-[900px]:my-[3vw] max-[900px]:max-w-xs max-[900px]:text-[0.85rem] max-[900px]:[text-shadow:0_0_14px_#000]">
         {project.description}
       </p>
 

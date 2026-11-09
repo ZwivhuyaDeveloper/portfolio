@@ -32,7 +32,8 @@ export function ProjectItem({
           {project.category}
         </div>
         <h3 className="my-3 mt-[0.6rem] mb-[0.8rem] font-display italic font-extrabold uppercase text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.88] w-full">
-          {project.title}
+          <span className="block w-fit origin-left">{project.title[0]}</span>
+          <span className="block w-fit origin-left text-accent">{project.title[1]}</span>
         </h3>
         <p className="text-[clamp(1rem,2.0vw,1.25rem)] mb-4 text-muted ">{project.description}</p>
         <Link

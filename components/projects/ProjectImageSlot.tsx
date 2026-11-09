@@ -11,8 +11,8 @@ export function ProjectImageSlot({ art, src, alt, className = "", children }: { 
       src={src}
       alt={alt}
       fallback={<Art className="h-full w-full opacity-50" />}
-      className={`relative overflow-hidden bg-[#111] ${className}`}
-      sizes="(max-width: 768px) 100vw, 50vw"
+      className={`relative overflow-hidden w-full h-full bg-[#111] ${className}`}
+      sizes="(max-width: 1920px) 100vw, 50vw"
       grain
     >
       {children}
