@@ -24,7 +24,7 @@ export function CaseStudyCopy({ project }: { project: Project }) {
         <span className="block w-fit origin-left scale-x-[1.24] bg-linear-to-b from-white to-[#9d9d99] bg-clip-text pt-[0.06em] text-transparent max-[900px]:scale-x-100">
           {project.title[0]}
         </span>
-        <span className="block w-fit origin-left scale-x-[1.24] text-accent max-[900px]:scale-x-100">
+        <span className="block w-fit origin-left scale-x-[1.24] bg-linear-to-b from-white to-[#9d9d99] bg-clip-text text-transparent max-[900px]:scale-x-100">
           {project.title[1]}
         </span>
       </h1>

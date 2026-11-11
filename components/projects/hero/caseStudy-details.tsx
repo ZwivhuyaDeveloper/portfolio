@@ -102,8 +102,8 @@ export function CaseStudyDetails({ project, prev, next, totalProjects }: Props) 
       {/* 03 - Gallery (4 Uniform Images Grid) */}
       <section aria-labelledby="gallery" className="border-b border-line px-pad py-16 md:py-24">
         <div className="mb-12 flex items-end gap-6 md:px-10">
-          <h2 id="gallery" className="d text-[clamp(2.6rem,5vw,4.6rem)] font-black">
-            Gallery<span className="text-accent">_</span>
+          <h2 id="gallery" className="d text-[clamp(2.6rem,5vw,4.6rem)] font-black capitalize">
+            PROJECT GALLERY<span className="text-accent">_</span>
           </h2>
           <hr className="mb-4 flex-1 border-line" />
           <span className="mono mb-3 text-muted">{pad2(project.gallery.length)} images</span>

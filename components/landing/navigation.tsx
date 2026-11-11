@@ -1,7 +1,13 @@
+"use client"
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
 
 export function Navigation() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <nav
       aria-label="Primary"
@@ -21,8 +27,8 @@ export function Navigation() {
         {site.nav.map((item, i) => (
           <li key={item.href}>
             <Link
-              href={item.href}
-              data-active={i === 0 ? "true" : undefined}
+              href={isHome ? item.href : `/${item.href}`}
+              data-active={isHome && i === 0 ? "true" : undefined}
               className="relative block py-2 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent 
               after:transition-[width] after:duration-300 after:content-[''] hover:after:w-full data-[active=true]:after:w-full"
             >

@@ -35,7 +35,7 @@ export const projects: Project[] = [
     summary: 'A modern website for Cyclespace Exchange, review news, and market updates.',
     description: 'Cyclespace Exchange is a website that allows users to review updates, featuring real-time news and a sleek user interface.',
     href: '/projects/cyclespace-exchange',
-    cover: '/assets/projects/cyse-website.png',
+    cover: '/assets/projects/cyse-hero-animated2.gif',
     image: '/assets/projects/cyse-website.png',
     assets: ['/assets/projects/cyse-about.png', '/assets/projects/cyse-display.png'],
     alt: 'Cyclespace Exchange Website',

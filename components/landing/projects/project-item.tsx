@@ -24,7 +24,7 @@ export function ProjectItem({
       >
         <div className="font-display italic font-black text-[clamp(5rem,12vw,11rem)] leading-[0.8] text-transparent 
           [-webkit-text-stroke:1px_var(--color-line)] transition-[-webkit-text-stroke-color] 
-          duration-300 group-hover:[-webkit-text-stroke-color:var(--color-accent)]"
+          duration-300 group-hover:[-webkit-text-stroke-color:var(--color-accent)] mb-2"
         >
           {project.index}
         </div>
